@@ -1,7 +1,13 @@
 package com.unrealwork.adaptive.java.ds;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
 /**
@@ -13,8 +19,8 @@ public class ListCreation {
   public static void main(String[] args) {
     long x = 1;
     long y = 4;
-    long r = LongStream.rangeClosed(1, 4).reduce((left, right) -> left * right).getAsLong();
-    List<Integer> list = Arrays.asList(2, 0, 1, 7);
-    System.out.println(list);
+    List<Integer> numbers = Arrays.asList(1, 2, 3);
+    long r = numbers.stream().collect(Collectors.reducing((Integer o,Integer o2) -> o + o2*o2)).get();
+    System.out.println(r);
   }
 }
