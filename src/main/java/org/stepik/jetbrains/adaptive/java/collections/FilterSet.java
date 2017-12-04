@@ -1,4 +1,4 @@
-package org.stepik.jetbrains.adaptive.java.ds;
+package org.stepik.jetbrains.adaptive.java.collections;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package org.stepik.jetbrains.adaptive.java.generics;
+package org.stepik.jetbrains.adaptive.java.collections;
 
 /**
  * Created by Shmagrinsky on 21.06.2017.

@@ -1,4 +1,4 @@
-package org.stepik.jetbrains.adaptive.java;
+package org.stepik.jetbrains.adaptive.java.basic;
 
 import java.util.stream.LongStream;
 

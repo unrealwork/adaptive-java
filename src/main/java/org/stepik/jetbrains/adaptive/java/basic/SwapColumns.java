@@ -1,4 +1,4 @@
-package org.stepik.jetbrains.adaptive.java.problems;
+package org.stepik.jetbrains.adaptive.java.basic;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 

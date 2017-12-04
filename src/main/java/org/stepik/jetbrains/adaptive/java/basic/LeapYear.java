@@ -1,4 +1,4 @@
-package org.stepik.jetbrains.adaptive.java.problems;
+package org.stepik.jetbrains.adaptive.java.basic;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -9,7 +9,10 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
-public class Star {
+/**
+ * Created by Shmagrinsky on 24.06.2017.
+ */
+public class LeapYear {
 
   private static int readData(InputStream is) {
     try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
@@ -20,25 +23,17 @@ public class Star {
     }
   }
 
-  private static char[][] solve(int size) {
-    char[][] result = new char[size][size];
-    int middle = size / 2;
-    for (int i = 0; i < size; i++) {
-      for (int j = 0; j < size; j++) {
-        result[i][j] = (i == middle || j == middle || i == j || i + j + 1 == size) ? '*' : '.';
-      }
-    }
-    return result;
+  private static int gcd(int n, int m) {
+    return (m == n) ? n : (m > n) ? gcd(m - n, n) : gcd(n - m, m);
   }
 
-  private static void printResult(OutputStream os, char[][] matrix) {
+  private static boolean solve(int year) {
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+  }
+
+  private static void printResult(OutputStream os, boolean isLeap) {
     try (BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(os))) {
-      for (int i = 0; i < matrix.length; i++) {
-        for (int j = 0; j < matrix.length; j++) {
-          bufferedWriter.write(String.format("%c ",matrix[i][j]));
-        }
-        bufferedWriter.write(String.format("%n"));
-      }
+      bufferedWriter.write(isLeap ? "Leap" : "Regular");
     } catch (IOException e) {
       throw new IllegalStateException(e);
     }

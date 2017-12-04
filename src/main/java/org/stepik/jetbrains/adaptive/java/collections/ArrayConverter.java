@@ -1,4 +1,4 @@
-package org.stepik.jetbrains.adaptive.java.generics;
+package org.stepik.jetbrains.adaptive.java.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;

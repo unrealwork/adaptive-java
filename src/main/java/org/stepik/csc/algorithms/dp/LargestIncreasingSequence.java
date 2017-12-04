@@ -2,14 +2,13 @@ package org.stepik.csc.algorithms.dp;
 
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.stream.IntStream;
 
 public class LargestIncreasingSequence {
 
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
-    int[] nums = IntStream.range(0, in.nextInt())
-        .map(i -> in.nextInt()).toArray();
+    int[] nums = Arrays.stream(in.nextLine().split("\\s"))
+        .mapToInt(Integer::parseInt).toArray();
     System.out.println(solve(nums));
     in.close();
   }
@@ -20,7 +19,7 @@ public class LargestIncreasingSequence {
     int res = 1;
     for (int i = 1; i < nums.length; i++) {
       for (int j = 0; j < i; j++) {
-        if (nums[i] % nums[j] == 0) {
+        if (nums[i] > nums[j]) {
           if (d[j] + 1 > d[i]) {
             d[i] = d[j] + 1;
           }
