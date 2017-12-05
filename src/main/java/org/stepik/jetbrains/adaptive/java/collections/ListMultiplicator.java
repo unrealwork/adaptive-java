@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Class to modify
  */
-class ListMultiplicator {
+public class ListMultiplicator {
 
   /**
    * Multiplies original list provided numper of times
