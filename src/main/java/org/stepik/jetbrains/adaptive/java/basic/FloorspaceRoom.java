@@ -11,9 +11,9 @@ import java.io.InputStreamReader;
  * room shape and the relevant parameters as input - the program should output
  * the area of the resulting room. <p>The value of 3.14 is used instead of the
  * number π in Malevia. </p>
- *
+ * <p>
  * Input format used by the Malevians:
- *
+ * <p>
  * <pre>
  *   triangle
  *   a
@@ -26,7 +26,7 @@ public class FloorspaceRoom {
   private static final double PI = 3.14d;
 
   enum ShapeType {
-    TRIANGLE("triangle"), RECTANGLE("rectabgle"), CIRCLE("circle");
+    TRIANGLE("triangle"), RECTANGLE("rectangle"), CIRCLE("circle");
 
     private final String type;
 
@@ -165,7 +165,7 @@ public class FloorspaceRoom {
         default:
           throw new IllegalStateException();
       }
-      System.out.format("%.1f", shape.area());
+      System.out.println(shape.area());
     } catch (IOException e) {
       throw new IllegalStateException(e);
     }

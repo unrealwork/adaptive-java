@@ -1,5 +1,7 @@
 package org.stepik.jetbrains.adaptive.java.functional;
 
+import java.util.function.BiFunction;
+import java.util.function.Function;
 import java.util.stream.LongStream;
 
 public class Factorial {
@@ -18,4 +20,10 @@ public class Factorial {
   public static void main(String[] args) {
     System.out.println(factorial(0));
   }
+
+  Function<Integer, Integer> a = (a) -> a;
+
+  BiFunction<Integer, Integer, Function<Integer, Integer>> c = (a, b) -> (c -> c);
+
+  BiFunction<Integer, Integer, BiFunction<Integer, Integer, Function<Integer, Integer>>> cur = (a, b) -> (c, d) -> e -> a + b + c;
 }
